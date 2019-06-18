@@ -100,9 +100,9 @@
   list-style-type: none;
   display: inline-block;
   border: solid;
-  border-radius: 7px;
-  background-color: white;
-  border-color: #4F97A3;
+  border-radius: 10px;
+  background-color:#130f40;
+  border-color: whitesmoke;
   margin-left: 5vw;
   margin-top: 1vh;
 
@@ -112,9 +112,9 @@
   width: 13.5vw;
   height: 5vh;
   position: relative;
-  background-color: #4F97A3;
+  background-color:#130f40;
   margin-top: 0px;
-  border-radius: 7px;
+  border-radius: 10px;
   margin-left: -3px;
 
 }
@@ -131,9 +131,9 @@
 .detail {
 
   font-size: 2vw;
-  color: #4c4cff;
+  color: white;
   margin-top: 15vh;
-  margin-left: 5vw;
+  margin-left: 35%;
 }
 
 .Squreimage {
@@ -141,14 +141,15 @@
   width: 5vw;
   height: 6vh;
   position: absolute;
-  margin-left: 4vw;
-  margin-top: 5vh;
+  margin-left: 5%;
+  margin-top: 4%;
 
 }
 
 .mainTitle {
-  padding: 10px;
-  border-bottom: #263238 solid 5px;
+  padding: 30px;
+  border-bottom: #263238 solid 10px;
+  width: 50%
 }
 
 section.mainTitle label:first-child {
