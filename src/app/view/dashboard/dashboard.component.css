@@ -101,7 +101,7 @@
   display: inline-block;
   border: solid;
   border-radius: 10px;
-  background-color:#130f40;
+  background-color:darkorange;
   border-color: whitesmoke;
   margin-left: 5vw;
   margin-top: 1vh;
@@ -112,7 +112,7 @@
   width: 13.5vw;
   height: 5vh;
   position: relative;
-  background-color:#130f40;
+  background-color:darkorange;
   margin-top: 0px;
   border-radius: 10px;
   margin-left: -3px;
@@ -261,3 +261,77 @@ section#leftPanel nav ul a li:hover {
 #drop .dropdown-item:hover {
   background-color: #0069d9;
 }
+
+.Itemsquare {
+  width: 13.5vw;
+  height: 30vh;
+  list-style-type: none;
+  display: inline-block;
+  border: solid;
+  border-radius: 10px;
+  background-color:darkorchid;
+  border-color: whitesmoke;
+  margin-left: 5vw;
+  margin-top: 1vh;
+}
+
+.Ordersquare {
+  width: 13.5vw;
+  height: 30vh;
+  list-style-type: none;
+  display: inline-block;
+  border: solid;
+  border-radius: 10px;
+  background-color:forestgreen;
+  border-color: whitesmoke;
+  margin-left: 5vw;
+  margin-top: 1vh;
+}
+.Systemsquare {
+  width: 13.5vw;
+  height: 30vh;
+  list-style-type: none;
+  display: inline-block;
+  border: solid;
+  border-radius: 10px;
+  background-color:peru;
+  border-color: whitesmoke;
+  margin-left: 5vw;
+  margin-top: 1vh;
+}
+
+.Itemtitle {
+  width: 13.5vw;
+  height: 5vh;
+  position: relative;
+  background-color:darkorchid;
+  margin-top: 0px;
+  border-radius: 10px;
+  margin-left: -3px;
+}
+
+.Ordertitle {
+  width: 13.5vw;
+  height: 5vh;
+  position: relative;
+  background-color:forestgreen;
+  margin-top: 0px;
+  border-radius: 10px;
+  margin-left: -3px;
+}
+.Systemtitle {
+  width: 13.5vw;
+  height: 5vh;
+  position: relative;
+  background-color:peru;
+  margin-top: 0px;
+  border-radius: 10px;
+  margin-left: -3px;
+
+}
+
+
+
+
+
+
