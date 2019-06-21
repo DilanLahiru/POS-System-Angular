@@ -8,6 +8,8 @@ import { ManageCustomersComponent } from './view/manage-customers/manage-custome
 import { ManageItemesComponent } from './view/manage-itemes/manage-itemes.component';
 import { ManageOrderComponent } from './view/manage-order/manage-order.component';
 import { SidebarComponent } from './view/sidebar/sidebar.component';
+import { FormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { SidebarComponent } from './view/sidebar/sidebar.component';
     ManageCustomersComponent,
     ManageItemesComponent,
     ManageOrderComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
