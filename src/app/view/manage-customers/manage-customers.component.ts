@@ -1,20 +1,20 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
-import { Customer } from "../../dto/customer";
-import { CustomerService } from "src/app/service/customer.service";
-import { NgForm } from "@angular/forms";
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Customer } from '../../dto/customer';
+import { CustomerService } from 'src/app/service/customer.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: "app-manage-customers",
-  templateUrl: "./manage-customers.component.html",
-  styleUrls: ["./manage-customers.component.css"]
+  selector: 'app-manage-customers',
+  templateUrl: './manage-customers.component.html',
+  styleUrls: ['./manage-customers.component.css']
 })
 export class ManageCustomersComponent implements OnInit {
   customers: Customer[] = [];
   SCustomers: Customer[] = [];
-  selectedCustomer: Customer = new Customer("", "", "", 0);
+  selectedCustomer: Customer = new Customer('', '', '', 0);
 
-  @ViewChild("txtId", { static: true }) txtId: ElementRef;
-  @ViewChild("frmCustomer", { static: true }) frmCustomer: NgForm;
+  @ViewChild('txtId', { static: true }) txtId: ElementRef;
+  @ViewChild('frmCustomer', { static: true }) frmCustomer: NgForm;
 
   constructor(private customerService: CustomerService) {}
 
@@ -26,17 +26,18 @@ export class ManageCustomersComponent implements OnInit {
   }
 
   saveCustomer(): void {
-    alert("Save Click");
-    alert(this.selectedCustomer.id + "," + this.selectedCustomer.address+ "," + this.selectedCustomer.name+ "," + this.selectedCustomer.salary);
+    alert('Save Click');
+// tslint:disable-next-line: max-line-length
+    alert(this.selectedCustomer.id + ',' + this.selectedCustomer.address + ',' + this.selectedCustomer.name + ',' + this.selectedCustomer.salary);
     // if (!this.frmCustomer.invalid) {
-      this.customerService.saveCustomer(this.selectedCustomer)
+    this.customerService.saveCustomer(this.selectedCustomer)
         .subscribe(resp => {
           if (resp) {
-            alert("Customer has been saved successfully");
+            alert('Customer has been saved successfully');
             this.customers.push(this.selectedCustomer);
             this.customerService.getAllCustomers();
           } else {
-            alert("Failed to save the customer");
+            alert('Failed to save the customer');
           }
         });
     // } else {
@@ -44,28 +45,28 @@ export class ManageCustomersComponent implements OnInit {
     // }
   }
 
-  // updateCustomer(id, name, address, salary): void {
-  //   console.log('Update Click');
-  //   const cusUpdate = new Customer(id, name, address, salary);
-  //   console.log(cusUpdate);
-  //   this.customerService.updateCustomer(cusUpdate).subscribe(
-  //     (result) => {
-  //       alert('Update successfull..');
-  //       this.customerService.getAllCustomers();
-  //     }
-  //   );
-  // }
+  updateCustomer(id: string, name: string, address: string, salary: number): void {
+    console.log('Update Click');
+    const cusUpdate = new Customer(id, name, address, salary);
+    console.log(cusUpdate);
+    this.customerService.updateCustomer(cusUpdate).subscribe(
+      (result) => {
+        alert('Update successfull..');
+        this.customerService.getAllCustomers();
+      }
+    );
+  }
 
-  // deleteCustomer(id): void {
-  //   console.log('Delete Click..');
-  //   const customerIdValDel = id;
-  //   this.customerService.deleteCustomer(customerIdValDel).subscribe(
-  //     (result) => {
-  //       alert('Customer Deleted Successfully...');
-  //       this.customerService.getAllCustomers();
-  //     }
-  //   );
-  // }
+  deleteCustomer(id: any): void {
+    console.log('Delete Click..');
+    const customerIdValDel = id;
+    this.customerService.deleteCustomer(customerIdValDel).subscribe(
+      (result) => {
+        alert('Customer Deleted Successfully...');
+        this.customerService.getAllCustomers();
+      }
+    );
+  }
 
   // searchCustomer(id): void {
   //   console.log('search Customer in component');

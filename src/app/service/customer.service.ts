@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CustomerService {
+  [x: string]: any;
 
   readonly baseUrl = environment.apiUrl + '/customers';
 
@@ -19,5 +20,12 @@ export class CustomerService {
   }
   saveCustomer(customer: Customer): Observable<boolean> {
     return this.http.post<boolean>(this.baseUrl, customer);
+  }
+  updateCustomer(customer: Customer): Observable<boolean> {
+    return this.http.put<boolean>(this.baseUrl, customer);
+  }
+
+  deleteCustomer(id: number): Observable<Customer[]> {
+    return this.http.delete<Customer[]>(this.baseUrl + '?cusid=' + id);
   }
 }

@@ -8,19 +8,19 @@
         <form (ngSubmit)="saveItem()"  #frmItems="ngForm">
             <div class="form-group">
               <label for="formGroupExampleInput">code</label>
-              <input type="text" name="txtcode" [(ngModel)]="selectedItem.code" class="form-control" id="formGroupExampleInput" placeholder="code">
+              <input type="text" #txtcode name="txtcode" [(ngModel)]="selectedItem.code" class="form-control" id="formGroupExampleInput" placeholder="code">
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput2">description</label>
-              <input type="text" name="description"  [(ngModel)]="selectedItem.description" class="form-control" id="formGroupExampleInput2" placeholder="description">
+              <input type="text" #txtdescription name="description"  [(ngModel)]="selectedItem.description" class="form-control" id="formGroupExampleInput2" placeholder="description">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">unit price</label>
-                <input type="text" name="unitPrice"  [(ngModel)]="selectedItem.unitPrice" class="form-control" id="formGroupExampleInput" placeholder="unit price">
+                <input type="text" #txtunitPrice name="unitPrice"  [(ngModel)]="selectedItem.unitPrice" class="form-control" id="formGroupExampleInput" placeholder="unit price">
               </div>
               <div class="form-group">
                   <label for="formGroupExampleInput">qty on hand</label>
-                  <input type="text" name="qtyonHand"  [(ngModel)]="selectedItem.qtyOnHand" class="form-control" id="formGroupExampleInput" placeholder="qty on hand">
+                  <input type="text" #txtqtyonHand name="qtyonHand"  [(ngModel)]="selectedItem.qtyOnHand" class="form-control" id="formGroupExampleInput" placeholder="qty on hand">
                 </div>
 
                 <div style="margin-right: 10">
@@ -30,7 +30,7 @@
                     <button type="button" class="btn btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
                         update item
                       </button>
-                      <button type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
+                      <button type="button" (click)="deleteItem(txtcode.value)" class="btn btn-danger" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
                           delete item
                         </button>
               </div>

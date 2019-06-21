@@ -44,5 +44,15 @@ export class ManageItemesComponent implements OnInit {
     //   alert('Invalid Data, Please Correct...!');
     // }
   }
+  deleteItem(code: any): void {
+    console.log('Delete Click..');
+    const itemCodeValDel = code;
+    this.itemService.deleteItem(itemCodeValDel).subscribe(
+      (result) => {
+        alert('Item Deleted Successfully...');
+        this.itemService.getAllItems();
+      }
+    );
+  }
 
 }
