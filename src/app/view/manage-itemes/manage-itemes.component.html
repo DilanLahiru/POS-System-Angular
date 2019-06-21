@@ -5,36 +5,39 @@
     </div>
 
     <div class=custom-div>
-        <form>
+        <form (ngSubmit)="saveItem()"  #frmItems="ngForm">
             <div class="form-group">
               <label for="formGroupExampleInput">code</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="code">
+              <input type="text" name="txtcode" [(ngModel)]="selectedItem.code" class="form-control" id="formGroupExampleInput" placeholder="code">
             </div>
             <div class="form-group">
               <label for="formGroupExampleInput2">description</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="description">
+              <input type="text" name="description"  [(ngModel)]="selectedItem.description" class="form-control" id="formGroupExampleInput2" placeholder="description">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">unit price</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="unit price">
+                <input type="text" name="unitPrice"  [(ngModel)]="selectedItem.unitPrice" class="form-control" id="formGroupExampleInput" placeholder="unit price">
               </div>
               <div class="form-group">
                   <label for="formGroupExampleInput">qty on hand</label>
-                  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="qty on hand">
+                  <input type="text" name="qtyonHand"  [(ngModel)]="selectedItem.qtyOnHand" class="form-control" id="formGroupExampleInput" placeholder="qty on hand">
                 </div>
+
+                <div style="margin-right: 10">
+                  <button type="submit" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
+                      save item
+                    </button>
+                    <button type="button" class="btn btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
+                        update item
+                      </button>
+                      <button type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
+                          delete item
+                        </button>
+              </div>
+
           </form>
     </div>
-    <div style="margin-right: 10">
-        <button type="button" class="btn btn-success" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
-            save item
-          </button>
-          <button type="button" class="btn btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
-              update item
-            </button>
-            <button type="button" class="btn btn-danger" data-toggle="button" aria-pressed="false" autocomplete="off" style="margin: 2%;border-radius: 20px">
-                delete item
-              </button>
-    </div>
+
 
     <div class="tbl">
 
@@ -49,7 +52,12 @@
         </tr>
         </thead>
         <tbody id="tbody">
-
+          <tr *ngFor="let item of items" (click)="selectedItem=item">
+            <td>{{item.code}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.unitPrice}}</td>
+            <td>{{item.qtyOnHand}}</td>
+          </tr>
         </tbody>
       </table>
 
